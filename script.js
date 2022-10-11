@@ -1,4 +1,5 @@
 var skin = 0;
+var invert = 0;
 
 /////
 
@@ -64,6 +65,10 @@ function imageDisplay(name) {
     //without this, there would always be 1 image that showed up as "image not defined" with a console error
     if (imageCursor != undefined) {
       $('#console').append('<div class="artwork"><img width="100%" src="foundARTs/' + name + '/' + imageCursor + '.jpg" alt="image ' + imageCursor +'"></div>');
+      if (invert == 1) {
+        $(".artwork").css("-webkit-filter", "invert(1)");
+        $(".artwork").css("filter", "invert(1)");
+      }
     }
   }
 }
@@ -79,7 +84,35 @@ $('a.category').click(function() {
   imageDisplay(id);
 })
 
-$('#skins').click(function() {
+$('#invert').click(function() {
+  if (invert == 0) {
+    invert = 1;
+    $("body").css("background-color", "black");
+    $("button").css("color", "black");
+    $("button").css("background-color", "white");
+    $("a").css("color", "whitesmoke");
+    $("p").css("color", "whitesmoke");
+    $("#console").css("color", "whitesmoke");
+    $("#phrase").css("color", "whitesmoke");
+    $(".artwork").css("-webkit-filter", "invert(1)");
+    $(".artwork").css("filter", "invert(1)");
+  }
+  else {
+    invert = 0;
+    $("body").css("background-color", "white");
+    $("button").css("color", "white");
+    $("button").css("background-color", "black");
+    $("a").css("color", "black");
+    $("p").css("color", "black");
+    $("#console").css("color", "whitesmoke");
+    $("#console").css("color", "black");
+    $("#phrase").css("color", "black");
+    $(".artwork").css("-webkit-filter", "invert(0)");
+    $(".artwork").css("filter", "invert(0)");
+  }
+})
+
+/*$('#skins').click(function() {
   if (skin == 0) {
     skin = 1;
     $("#logo").attr("src", "pressionArtsr.png")
@@ -125,4 +158,4 @@ $('#skins').click(function() {
     $("#console").css("color", "black");
   }
 
-})
+}) */
