@@ -32,6 +32,8 @@ a {
 }
 
 button {
+  font-family: times;
+  font-size: 18px;
   padding: 2%;
   margin: 2%;
   color: whitesmoke;
