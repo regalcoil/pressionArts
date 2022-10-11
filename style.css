@@ -1,0 +1,38 @@
+body {
+  background-color: white;
+}
+
+a {
+  width: 33.33%;
+  float: left;
+  font-size: 13px;
+  color: black;
+  margin-bottom: 3.33%;
+}
+
+
+#skins {
+}
+
+#phrase {
+  margin-bottom: 20px;
+}
+
+#logo {
+  width: 100%;
+}
+
+.artwork {
+  overflow: hidden;
+}
+
+.artwork img {
+  height: auto;
+  width: 50%;
+}
+
+button {
+  padding: 2%;
+  margin: 2%;
+  color: whitesmoke;
+}
