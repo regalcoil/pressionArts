@@ -1,4 +1,5 @@
 var skin = 0;
+var color = 0;
 var invert = 0;
 
 /////
@@ -18,7 +19,7 @@ var categories = ['Essence',
                   ];
 
 var phrases = [
-               'Thesis: oppression, impression, expression',
+               'Impression, expression, abstraction',
                'Width + height + depth',
                'On pages, with text or near it',
                'Minimal yet special for it',
@@ -55,7 +56,7 @@ function imageDisplay(name) {
   //clear out console elements every time a new category is chosen
   $('#console').empty();
 
-  $("#console").append('<div id="phrase" style="width: 100%; text-align: center; letter-spacing: 2px;">' + phrases[listCursor] + '</div>');
+  $("#console").append('<div id="phrase" style="width: 100%; font-size: 18px; text-align: center; letter-spacing: 2px;">' + phrases[listCursor] + '</div>');
 
   //appends each image in the chosen category to the console; exhausts randomizer array until there are no units left
   while (randomizer.length > 0) {
@@ -87,6 +88,7 @@ $('a.category').click(function() {
 $('#invert').click(function() {
   if (invert == 0) {
     invert = 1;
+    $("#logo").attr("src", "pressionArtsr.png")
     $("body").css("background-color", "black");
     $("button").css("color", "black");
     $("button").css("background-color", "white");
@@ -99,6 +101,7 @@ $('#invert').click(function() {
   }
   else {
     invert = 0;
+    $("#logo").attr("src", "pressionArts.png")
     $("body").css("background-color", "white");
     $("button").css("color", "white");
     $("button").css("background-color", "black");
@@ -111,6 +114,90 @@ $('#invert').click(function() {
     $(".artwork").css("filter", "invert(0)");
   }
 })
+
+$('#console').click(function() {
+  if (invert == 0) {
+    invert = 1;
+    $("#logo").attr("src", "pressionArtsr.png")
+    $("body").css("background-color", "black");
+    $("button").css("color", "black");
+    $("button").css("background-color", "white");
+    $("a").css("color", "whitesmoke");
+    $("p").css("color", "whitesmoke");
+    $("#console").css("color", "whitesmoke");
+    $("#phrase").css("color", "whitesmoke");
+    $(".artwork").css("-webkit-filter", "invert(1)");
+    $(".artwork").css("filter", "invert(1)");
+  }
+  else {
+    invert = 0;
+    $("#logo").attr("src", "pressionArts.png")
+    $("body").css("background-color", "white");
+    $("button").css("color", "white");
+    $("button").css("background-color", "black");
+    $("a").css("color", "black");
+    $("p").css("color", "black");
+    $("#console").css("color", "whitesmoke");
+    $("#console").css("color", "black");
+    $("#phrase").css("color", "black");
+    $(".artwork").css("-webkit-filter", "invert(0)");
+    $(".artwork").css("filter", "invert(0)");
+  }
+})
+
+$('body').on("keydown", function(e){
+   if(e.keyCode == 32) {
+       // user has pressed space
+
+      if (invert == 0) {
+        invert = 1;
+        $("#logo").attr("src", "pressionArtsr.png")
+        $("body").css("background-color", "black");
+        $("button").css("color", "black");
+        $("button").css("background-color", "white");
+        $("a").css("color", "whitesmoke");
+        $("p").css("color", "whitesmoke");
+        $("#console").css("color", "whitesmoke");
+        $("#phrase").css("color", "whitesmoke");
+        $(".artwork").css("-webkit-filter", "invert(1)");
+        $(".artwork").css("filter", "invert(1)");
+      }
+      else {
+        invert = 0;
+        $("#logo").attr("src", "pressionArts.png")
+        $("body").css("background-color", "white");
+        $("button").css("color", "white");
+        $("button").css("background-color", "black");
+        $("a").css("color", "black");
+        $("p").css("color", "black");
+        $("#console").css("color", "whitesmoke");
+        $("#console").css("color", "black");
+        $("#phrase").css("color", "black");
+        $(".artwork").css("-webkit-filter", "invert(0)");
+        $(".artwork").css("filter", "invert(0)");
+      }
+      return false; 
+   }
+});
+
+/*$('#color').click(function() {
+  if (color == 0) {
+    color = 1;
+    $(".artwork").css("filter", "hue-rotate(90deg")
+  }
+  else if (color == 1) {
+    color = 2;
+    $(".artwork").css("filter", "hue-rotate(180deg")
+  }
+  else if (color == 2) {
+    color = 3;
+    $(".artwork").css("filter", "hue-rotate(270deg")
+  }
+  else {
+    color = 0;
+    $(".artwork").css("filter", "hue-rotate(0deg")
+  }
+})*/
 
 /*$('#skins').click(function() {
   if (skin == 0) {
