@@ -10,6 +10,10 @@ a {
   margin-bottom: 3.33%;
 }
 
+#link {
+  float: none;
+}
+
 
 #skins {
 }
